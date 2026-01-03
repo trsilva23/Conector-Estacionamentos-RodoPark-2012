@@ -25,3 +25,13 @@ O objetivo principal da solução é permitir que a liberação das cancelas oco
 - `/ParkConnect.Models`: Entidades de dados e DTOs compartilhados entre as camadas.
 - `/ParkConnect.Api`: Projeto ASP.NET Web API responsável por receber e processar as requisições externas.
 - `/Sindrome_System_Integration/cliente_php`: Exemplo técnico da implementação do lado do cliente (PHP) que realiza o consumo da API C#.
+
+
+## Licença e Créditos
+
+Licença MIT. Disponível para modificação e distribuição livre, desde que atribua os créditos ao autor original.
+
+## Autor
+- **GitHub:** [trsilva23]
+- **E-mail:** [trsilva23.contato@gmail.com] 
+
