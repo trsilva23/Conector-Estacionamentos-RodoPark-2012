@@ -1,0 +1,33 @@
+<?php
+
+function sincronizarCondominoComEstacionamento($dadosCondomino) {
+    $url = "api.estacionamento.local";
+    
+    $payload = json_encode($dadosCondomino);
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+        'Content-Type: application/json',
+        'X-Integration-Key: d41d8cd98f00b204e9800998ecf8427e'
+    ));
+
+    $result = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    return ($httpCode == 200);
+}
+
+$dados = [
+    "IdCondomino" => 105,
+    "Nome" => "João Silva",
+    "PlacaVeiculo" => "ABC1234",
+    "Unidade" => "Bloco A - 402",
+    "EstaAdimplente" => true
+];
+
+sincronizarCondominoComEstacionamento($dados);
+?>
